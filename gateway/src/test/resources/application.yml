@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:inspectops;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    username: sa
+    password:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+inspectops:
+  inference-url: http://127.0.0.1:1
+  connect-timeout: 1s
+  read-timeout: 500ms
+  max-attempts: 2
+  review-threshold: 0.80
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus

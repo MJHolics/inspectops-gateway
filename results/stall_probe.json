@@ -1,0 +1,21 @@
+{
+  "load": {
+    "vus": 200,
+    "requests": 26715,
+    "rps": 351.7,
+    "p50_ms": 522.6,
+    "p90_ms": 545.2,
+    "p99_ms": 3113.8,
+    "max_ms": 3286.6,
+    "http_failed_rate": 0,
+    "checks_pass_rate": 1
+  },
+  "hot_snapshots": [],
+  "n_snapshots": 111,
+  "pg_slow_log": [
+    "postgres-1  | 2026-09-24 03:33:17.522 UTC [4961] LOG:  duration: 2586.116 ms  execute S_1: COMMIT",
+    "postgres-1  | 2026-09-24 03:33:17.524 UTC [4957] LOG:  duration: 2586.127 ms  execute S_1: COMMIT",
+    "postgres-1  | 2026-09-24 03:33:17.524 UTC [4958] LOG:  duration: 2586.884 ms  execute S_1: COMMIT"
+  ],
+  "gateway_warn": []
+}

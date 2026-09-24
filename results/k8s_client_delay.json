@@ -1,0 +1,28 @@
+{
+  "runs": [
+    {
+      "case": "vt=on,cpu=1",
+      "calls": 4827,
+      "throughput_rps": 160.9,
+      "inference_call_avg_ms": 44.9
+    },
+    {
+      "case": "vt=off,cpu=1",
+      "calls": 4797,
+      "throughput_rps": 159.9,
+      "inference_call_avg_ms": 105.1
+    },
+    {
+      "case": "vt=on,cpu=4",
+      "calls": 4596,
+      "throughput_rps": 153.2,
+      "inference_call_avg_ms": 73.9
+    },
+    {
+      "case": "vt=off,cpu=4",
+      "calls": 4679,
+      "throughput_rps": 156.0,
+      "inference_call_avg_ms": 79.5
+    }
+  ]
+}

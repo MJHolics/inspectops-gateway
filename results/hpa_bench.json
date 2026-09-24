@@ -1,0 +1,569 @@
+{
+  "meta": {
+    "vus": 64,
+    "duration": "6m",
+    "base": "http://192.168.49.2:31323",
+    "inference_limit_cpu": "500m",
+    "hpa": "1→6 @ CPU 60%",
+    "gateway": "1 replica fixed"
+  },
+  "hpa_timeline": [
+    {
+      "current": 1,
+      "desired": 1,
+      "ready": 1,
+      "cpu_pct": 0,
+      "t": 0
+    },
+    {
+      "current": 1,
+      "desired": 1,
+      "ready": 1,
+      "cpu_pct": 0,
+      "t": 10
+    },
+    {
+      "current": 1,
+      "desired": 1,
+      "ready": 1,
+      "cpu_pct": 0,
+      "t": 20
+    },
+    {
+      "current": 1,
+      "desired": 1,
+      "ready": 1,
+      "cpu_pct": 0,
+      "t": 31
+    },
+    {
+      "current": 1,
+      "desired": 1,
+      "ready": 1,
+      "cpu_pct": 0,
+      "t": 41
+    },
+    {
+      "current": 1,
+      "desired": 1,
+      "ready": 1,
+      "cpu_pct": 0,
+      "t": 51
+    },
+    {
+      "current": 1,
+      "desired": 3,
+      "ready": 1,
+      "cpu_pct": 138,
+      "t": 61
+    },
+    {
+      "current": 1,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 138,
+      "t": 71
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 138,
+      "t": 81
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 138,
+      "t": 92
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 138,
+      "t": 102
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 138,
+      "t": 112
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 138,
+      "t": 122
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 183,
+      "t": 132
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 183,
+      "t": 142
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 183,
+      "t": 152
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 183,
+      "t": 163
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 183,
+      "t": 173
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 183,
+      "t": 183
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 193
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 203
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 213
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 224
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 234
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 244
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 254
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 264
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 274
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 284
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 295
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 305
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 315
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 325
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 335
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 345
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 355
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 366
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 376
+    },
+    {
+      "current": 3,
+      "desired": 3,
+      "ready": 3,
+      "cpu_pct": 61,
+      "t": 386
+    }
+  ],
+  "load_series": [
+    {
+      "t": 0,
+      "rps": 103.6,
+      "p50_ms": 589.4,
+      "p95_ms": 989.9,
+      "failed": 0
+    },
+    {
+      "t": 10,
+      "rps": 120.8,
+      "p50_ms": 548.8,
+      "p95_ms": 711.8,
+      "failed": 0
+    },
+    {
+      "t": 20,
+      "rps": 116.4,
+      "p50_ms": 508.6,
+      "p95_ms": 693.9,
+      "failed": 0
+    },
+    {
+      "t": 30,
+      "rps": 86.7,
+      "p50_ms": 506.8,
+      "p95_ms": 3104.8,
+      "failed": 0
+    },
+    {
+      "t": 40,
+      "rps": 117.2,
+      "p50_ms": 505.4,
+      "p95_ms": 694.4,
+      "failed": 0
+    },
+    {
+      "t": 50,
+      "rps": 114.6,
+      "p50_ms": 527.8,
+      "p95_ms": 699.5,
+      "failed": 0
+    },
+    {
+      "t": 60,
+      "rps": 86.9,
+      "p50_ms": 506.4,
+      "p95_ms": 3198.6,
+      "failed": 0
+    },
+    {
+      "t": 70,
+      "rps": 120.5,
+      "p50_ms": 503.8,
+      "p95_ms": 692.9,
+      "failed": 0
+    },
+    {
+      "t": 80,
+      "rps": 118.8,
+      "p50_ms": 504.1,
+      "p95_ms": 693.8,
+      "failed": 0
+    },
+    {
+      "t": 90,
+      "rps": 85.1,
+      "p50_ms": 508.7,
+      "p95_ms": 3104.7,
+      "failed": 0
+    },
+    {
+      "t": 100,
+      "rps": 121.8,
+      "p50_ms": 505.4,
+      "p95_ms": 693.0,
+      "failed": 0
+    },
+    {
+      "t": 110,
+      "rps": 116.8,
+      "p50_ms": 504.4,
+      "p95_ms": 698.4,
+      "failed": 0
+    },
+    {
+      "t": 120,
+      "rps": 99.5,
+      "p50_ms": 502.9,
+      "p95_ms": 693.8,
+      "failed": 0
+    },
+    {
+      "t": 130,
+      "rps": 111.8,
+      "p50_ms": 502.7,
+      "p95_ms": 3098.1,
+      "failed": 0
+    },
+    {
+      "t": 140,
+      "rps": 121.8,
+      "p50_ms": 502.0,
+      "p95_ms": 691.9,
+      "failed": 0
+    },
+    {
+      "t": 150,
+      "rps": 119.5,
+      "p50_ms": 501.7,
+      "p95_ms": 687.7,
+      "failed": 0
+    },
+    {
+      "t": 160,
+      "rps": 93.2,
+      "p50_ms": 501.5,
+      "p95_ms": 3094.8,
+      "failed": 0
+    },
+    {
+      "t": 170,
+      "rps": 121.8,
+      "p50_ms": 502.0,
+      "p95_ms": 670.4,
+      "failed": 0
+    },
+    {
+      "t": 180,
+      "rps": 125.2,
+      "p50_ms": 494.8,
+      "p95_ms": 628.1,
+      "failed": 0
+    },
+    {
+      "t": 190,
+      "rps": 92.6,
+      "p50_ms": 500.1,
+      "p95_ms": 3220.0,
+      "failed": 0
+    },
+    {
+      "t": 200,
+      "rps": 126.1,
+      "p50_ms": 496.3,
+      "p95_ms": 632.1,
+      "failed": 0
+    },
+    {
+      "t": 210,
+      "rps": 125.1,
+      "p50_ms": 497.8,
+      "p95_ms": 634.1,
+      "failed": 0
+    },
+    {
+      "t": 220,
+      "rps": 89.8,
+      "p50_ms": 496.7,
+      "p95_ms": 3163.6,
+      "failed": 0
+    },
+    {
+      "t": 230,
+      "rps": 122.8,
+      "p50_ms": 500.8,
+      "p95_ms": 671.1,
+      "failed": 0
+    },
+    {
+      "t": 240,
+      "rps": 128.3,
+      "p50_ms": 498.6,
+      "p95_ms": 696.9,
+      "failed": 0
+    },
+    {
+      "t": 250,
+      "rps": 110.8,
+      "p50_ms": 502.7,
+      "p95_ms": 691.7,
+      "failed": 0
+    },
+    {
+      "t": 260,
+      "rps": 101.0,
+      "p50_ms": 499.7,
+      "p95_ms": 3097.2,
+      "failed": 0
+    },
+    {
+      "t": 270,
+      "rps": 127.2,
+      "p50_ms": 498.7,
+      "p95_ms": 610.3,
+      "failed": 0
+    },
+    {
+      "t": 280,
+      "rps": 125.3,
+      "p50_ms": 496.2,
+      "p95_ms": 668.6,
+      "failed": 0
+    },
+    {
+      "t": 290,
+      "rps": 89.2,
+      "p50_ms": 513.1,
+      "p95_ms": 3099.4,
+      "failed": 0
+    },
+    {
+      "t": 300,
+      "rps": 126.2,
+      "p50_ms": 500.4,
+      "p95_ms": 597.0,
+      "failed": 0
+    },
+    {
+      "t": 310,
+      "rps": 128.0,
+      "p50_ms": 499.0,
+      "p95_ms": 630.1,
+      "failed": 0
+    },
+    {
+      "t": 320,
+      "rps": 89.8,
+      "p50_ms": 499.7,
+      "p95_ms": 3047.4,
+      "failed": 0
+    },
+    {
+      "t": 330,
+      "rps": 124.0,
+      "p50_ms": 499.8,
+      "p95_ms": 631.2,
+      "failed": 0
+    },
+    {
+      "t": 340,
+      "rps": 124.3,
+      "p50_ms": 500.4,
+      "p95_ms": 638.3,
+      "failed": 0
+    },
+    {
+      "t": 350,
+      "rps": 90.7,
+      "p50_ms": 502.2,
+      "p95_ms": 691.8,
+      "failed": 0
+    },
+    {
+      "t": 360,
+      "rps": 122.7,
+      "p50_ms": 501.6,
+      "p95_ms": 3069.3,
+      "failed": 0
+    },
+    {
+      "t": 370,
+      "rps": 128.2,
+      "p50_ms": 498.5,
+      "p95_ms": 692.0,
+      "failed": 0
+    },
+    {
+      "t": 380,
+      "rps": 124.9,
+      "p50_ms": 496.8,
+      "p95_ms": 661.2,
+      "failed": 0
+    },
+    {
+      "t": 390,
+      "rps": 7.0,
+      "p50_ms": 3156.1,
+      "p95_ms": 3326.0,
+      "failed": 0
+    }
+  ],
+  "k6_rc": 0,
+  "k6_tail": "\n\n  █ TOTAL RESULTS \n\n    checks_total.......: 88120   224.298685/s\n    checks_succeeded...: 100.00% 88120 out of 88120\n    checks_failed......: 0.00%   0 out of 88120\n\n    ✓ created\n    ✓ judged\n\n    HTTP\n    http_req_duration..............: avg=570.43ms p(50)=502.02ms p(90)=635.83ms p(99)=3.19s    max=3.51s\n      { expected_response:true }...: avg=570.43ms p(50)=502.02ms p(90)=635.83ms p(99)=3.19s    max=3.51s\n    http_req_failed................: 0.00%  0 out of 44060\n    http_reqs......................: 44060  112.149343/s\n\n    EXECUTION\n    iteration_duration.............: avg=523.01ms p(50)=501.63ms p(90)=610.37ms p(99)=731.59ms max=1.71s\n    iterations.....................: 44060  112.149343/s\n    vus............................: 64     min=64         max=64\n    vus_max........................: 64     min=64         max=64\n\n    NETWORK\n    data_received..................: 23 MB  57 kB/s\n    data_sent......................: 365 MB 930 kB/s\n\n\n\n"
+}

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: inspectops
+description: InspectOps 검사 플랫폼 — Gateway(Spring Boot) + 추론 서비스(ONNX) + PostgreSQL
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

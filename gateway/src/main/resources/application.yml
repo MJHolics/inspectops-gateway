@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: inspectops-gateway
+  threads:
+    virtual:
+      enabled: ${VIRTUAL_THREADS:false}
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/inspectops}
+    username: ${DB_USER:inspectops}
+    password: ${DB_PASSWORD:inspectops}
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:10}
+      connection-timeout: ${DB_CONNECTION_TIMEOUT_MS:30000}
+  jpa:
+    open-in-view: ${OPEN_IN_VIEW:false}
+    hibernate:
+      ddl-auto: validate
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+server:
+  tomcat:
+    threads:
+      max: ${TOMCAT_MAX_THREADS:200}
+    accept-count: ${TOMCAT_ACCEPT_COUNT:100}
+  shutdown: graceful
+
+inspectops:
+  inference-url: ${INFERENCE_URL:http://localhost:8000}
+  connect-timeout: 2s
+  read-timeout: ${INFERENCE_READ_TIMEOUT:30s}
+  max-attempts: ${INFERENCE_MAX_ATTEMPTS:2}
+  review-threshold: 0.80
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  metrics:
+    tags:
+      application: inspectops-gateway

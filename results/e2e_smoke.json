@@ -1,0 +1,295 @@
+{
+  "n": 24,
+  "status_count": {
+    "AUTO_ACCEPTED": 23,
+    "NEEDS_REVIEW": 1
+  },
+  "broken_input": {
+    "status": "FAILED",
+    "attempts": 1,
+    "error": "추론 거부 422: {\"detail\":\"이미지로 읽을 수 없는 입력\"}"
+  },
+  "review_queue_size_before": 1,
+  "reviewed": {
+    "status": "REVIEWED",
+    "reviewedClass": "crazing"
+  },
+  "stats": [
+    {
+      "lineId": "L1",
+      "status": "AUTO_ACCEPTED",
+      "count": 7
+    },
+    {
+      "lineId": "L1",
+      "status": "FAILED",
+      "count": 1
+    },
+    {
+      "lineId": "L1",
+      "status": "REVIEWED",
+      "count": 1
+    },
+    {
+      "lineId": "L2",
+      "status": "AUTO_ACCEPTED",
+      "count": 8
+    },
+    {
+      "lineId": "L3",
+      "status": "AUTO_ACCEPTED",
+      "count": 8
+    }
+  ],
+  "e2e_ms_p50": 69.6,
+  "e2e_ms_max": 170.7,
+  "metric_lines": [
+    "inspectops_inspections_total{application=\"inspectops-gateway\",line=\"L1\",status=\"AUTO_ACCEPTED\"} 7.0",
+    "inspectops_inspections_total{application=\"inspectops-gateway\",line=\"L1\",status=\"FAILED\"} 1.0",
+    "inspectops_inspections_total{application=\"inspectops-gateway\",line=\"L1\",status=\"NEEDS_REVIEW\"} 1.0",
+    "inspectops_inspections_total{application=\"inspectops-gateway\",line=\"L2\",status=\"AUTO_ACCEPTED\"} 8.0",
+    "inspectops_inspections_total{application=\"inspectops-gateway\",line=\"L3\",status=\"AUTO_ACCEPTED\"} 8.0"
+  ],
+  "rows": [
+    {
+      "file": "sample_01.jpg",
+      "line": "L1",
+      "status": "AUTO_ACCEPTED",
+      "class": "scratches",
+      "confidence": 0.9267241954803467,
+      "model_ms": 4.961,
+      "e2e_ms": 170.7,
+      "id": "ec44c5bb-9b6c-460f-8aee-e2a8e6998cd8"
+    },
+    {
+      "file": "sample_02.jpg",
+      "line": "L2",
+      "status": "AUTO_ACCEPTED",
+      "class": "inclusion",
+      "confidence": 0.8809310793876648,
+      "model_ms": 2.446,
+      "e2e_ms": 25.0,
+      "id": "67b581cf-e9a3-4613-b993-44544edf3984"
+    },
+    {
+      "file": "sample_03.jpg",
+      "line": "L3",
+      "status": "AUTO_ACCEPTED",
+      "class": "pitted_surface",
+      "confidence": 0.9150099158287048,
+      "model_ms": 2.594,
+      "e2e_ms": 75.3,
+      "id": "4dce83c9-7f22-4412-aab6-52e80f7cf16f"
+    },
+    {
+      "file": "sample_04.jpg",
+      "line": "L1",
+      "status": "AUTO_ACCEPTED",
+      "class": "pitted_surface",
+      "confidence": 0.9330922961235046,
+      "model_ms": 2.57,
+      "e2e_ms": 67.0,
+      "id": "b35061b7-5aad-40f9-b1bd-23448cf3e499"
+    },
+    {
+      "file": "sample_05.jpg",
+      "line": "L2",
+      "status": "AUTO_ACCEPTED",
+      "class": "patches",
+      "confidence": 0.9065060019493103,
+      "model_ms": 2.52,
+      "e2e_ms": 75.6,
+      "id": "2da47b09-2c34-43e3-8bab-9716b26e0e6f"
+    },
+    {
+      "file": "sample_06.jpg",
+      "line": "L3",
+      "status": "AUTO_ACCEPTED",
+      "class": "patches",
+      "confidence": 0.9229824542999268,
+      "model_ms": 2.391,
+      "e2e_ms": 68.1,
+      "id": "5c5c1e70-290b-4400-97aa-085549a689d7"
+    },
+    {
+      "file": "sample_07.jpg",
+      "line": "L1",
+      "status": "AUTO_ACCEPTED",
+      "class": "patches",
+      "confidence": 0.8937618136405945,
+      "model_ms": 2.571,
+      "e2e_ms": 71.7,
+      "id": "76f62533-4ed4-4960-ab57-6155f4c07105"
+    },
+    {
+      "file": "sample_08.jpg",
+      "line": "L2",
+      "status": "AUTO_ACCEPTED",
+      "class": "rolled-in_scale",
+      "confidence": 0.9412086606025696,
+      "model_ms": 2.442,
+      "e2e_ms": 67.4,
+      "id": "2e3da004-f9d9-46db-a25d-ff20fdce59f2"
+    },
+    {
+      "file": "sample_09.jpg",
+      "line": "L3",
+      "status": "AUTO_ACCEPTED",
+      "class": "pitted_surface",
+      "confidence": 0.9013798832893372,
+      "model_ms": 2.438,
+      "e2e_ms": 66.5,
+      "id": "6b20f6ba-c33c-4170-bf0f-cc2f6824a0a1"
+    },
+    {
+      "file": "sample_10.jpg",
+      "line": "L1",
+      "status": "AUTO_ACCEPTED",
+      "class": "rolled-in_scale",
+      "confidence": 0.9281309247016907,
+      "model_ms": 2.406,
+      "e2e_ms": 69.5,
+      "id": "251e277e-06ae-446f-bba3-c4aef7b9500d"
+    },
+    {
+      "file": "sample_11.jpg",
+      "line": "L2",
+      "status": "AUTO_ACCEPTED",
+      "class": "inclusion",
+      "confidence": 0.8621050715446472,
+      "model_ms": 2.511,
+      "e2e_ms": 71.9,
+      "id": "be41c2b0-24d8-4e0c-8c17-68f63d145b8c"
+    },
+    {
+      "file": "sample_12.jpg",
+      "line": "L3",
+      "status": "AUTO_ACCEPTED",
+      "class": "inclusion",
+      "confidence": 0.8726899027824402,
+      "model_ms": 2.428,
+      "e2e_ms": 65.7,
+      "id": "e729848e-92ac-4b40-9344-6a2340d0c458"
+    },
+    {
+      "file": "sample_13.jpg",
+      "line": "L1",
+      "status": "AUTO_ACCEPTED",
+      "class": "crazing",
+      "confidence": 0.8172867894172668,
+      "model_ms": 2.574,
+      "e2e_ms": 68.0,
+      "id": "685cb6c0-88c8-4e36-bba1-fe269582abcf"
+    },
+    {
+      "file": "sample_14.jpg",
+      "line": "L2",
+      "status": "AUTO_ACCEPTED",
+      "class": "patches",
+      "confidence": 0.8121282458305359,
+      "model_ms": 2.716,
+      "e2e_ms": 69.6,
+      "id": "d2723284-6ed2-4c82-a86c-00a896848b06"
+    },
+    {
+      "file": "sample_15.jpg",
+      "line": "L3",
+      "status": "AUTO_ACCEPTED",
+      "class": "crazing",
+      "confidence": 0.8328746557235718,
+      "model_ms": 2.425,
+      "e2e_ms": 74.1,
+      "id": "209fc2ee-b488-4fd5-b768-328ba5461f5d"
+    },
+    {
+      "file": "sample_16.jpg",
+      "line": "L1",
+      "status": "AUTO_ACCEPTED",
+      "class": "scratches",
+      "confidence": 0.8865205645561218,
+      "model_ms": 2.496,
+      "e2e_ms": 71.0,
+      "id": "fe9b5ee6-49f4-45fd-874c-9a3a4d772838"
+    },
+    {
+      "file": "sample_17.jpg",
+      "line": "L2",
+      "status": "AUTO_ACCEPTED",
+      "class": "rolled-in_scale",
+      "confidence": 0.9312358498573303,
+      "model_ms": 2.655,
+      "e2e_ms": 68.2,
+      "id": "4155b06c-cbe2-40ee-aa82-573574ebbc3a"
+    },
+    {
+      "file": "sample_18.jpg",
+      "line": "L3",
+      "status": "AUTO_ACCEPTED",
+      "class": "pitted_surface",
+      "confidence": 0.8587798476219177,
+      "model_ms": 2.43,
+      "e2e_ms": 75.4,
+      "id": "3340a8c9-db18-4f6f-a011-5112d1b4b381"
+    },
+    {
+      "file": "sample_19.jpg",
+      "line": "L1",
+      "status": "AUTO_ACCEPTED",
+      "class": "scratches",
+      "confidence": 0.9050084948539734,
+      "model_ms": 2.558,
+      "e2e_ms": 69.9,
+      "id": "1726bca2-3649-49fb-b73e-713780c99502"
+    },
+    {
+      "file": "sample_20.jpg",
+      "line": "L2",
+      "status": "AUTO_ACCEPTED",
+      "class": "scratches",
+      "confidence": 0.9292650818824768,
+      "model_ms": 2.444,
+      "e2e_ms": 71.8,
+      "id": "ddba420d-c50f-40d4-ba34-c612d9a1d9d5"
+    },
+    {
+      "file": "sample_21.jpg",
+      "line": "L3",
+      "status": "AUTO_ACCEPTED",
+      "class": "inclusion",
+      "confidence": 0.877065896987915,
+      "model_ms": 2.682,
+      "e2e_ms": 65.5,
+      "id": "8a695e5f-5cc5-4708-93b0-4125f82f3e9e"
+    },
+    {
+      "file": "sample_22.jpg",
+      "line": "L1",
+      "status": "NEEDS_REVIEW",
+      "class": "crazing",
+      "confidence": 0.7938954830169678,
+      "model_ms": 2.548,
+      "e2e_ms": 69.2,
+      "id": "013f8dc5-a5ac-4495-a040-fd01dc741eee"
+    },
+    {
+      "file": "sample_23.jpg",
+      "line": "L2",
+      "status": "AUTO_ACCEPTED",
+      "class": "rolled-in_scale",
+      "confidence": 0.9388571381568909,
+      "model_ms": 2.631,
+      "e2e_ms": 67.0,
+      "id": "3bb5b2b7-8fef-45f9-8f01-7d76c6513d15"
+    },
+    {
+      "file": "sample_24.jpg",
+      "line": "L3",
+      "status": "AUTO_ACCEPTED",
+      "class": "crazing",
+      "confidence": 0.8043922781944275,
+      "model_ms": 2.657,
+      "e2e_ms": 70.6,
+      "id": "8b253a5b-414e-4ade-9d61-3586e3ed2712"
+    }
+  ]
+}

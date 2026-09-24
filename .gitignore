@@ -1,0 +1,7 @@
+gateway/target/
+__pycache__/
+*.pyc
+.venv/
+results/_k6_summary.json
+# k6 원시 CSV(수십 MB) — 요약은 hpa_bench.json에 있다
+results/hpa_k6.csv

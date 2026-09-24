@@ -1,0 +1,134 @@
+{{- $full := include "inspectops.fullname" . -}}
+{{- $name := printf "%s-gateway" $full -}}
+{{- $pg := printf "%s-postgres" $full -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $name }}
+  labels: {{- include "inspectops.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app.kubernetes.io/name: gateway
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $name }}
+  labels: {{- include "inspectops.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.gateway.hpa.enabled }}
+  replicas: {{ .Values.gateway.replicas }}
+  {{- end }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: gateway
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: gateway
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+    spec:
+      terminationGracePeriodSeconds: 40
+      # DB보다 먼저 뜨면 Flyway가 연결 실패로 죽고 재시작을 반복한다(첫 설치에서 재시작 2회 실측).
+      # 재시작에 기대지 않고 DB 준비를 기다린다.
+      initContainers:
+        - name: wait-for-postgres
+          image: {{ .Values.postgres.image }}
+          command: ["sh", "-c", "until pg_isready -h {{ $pg }} -p 5432; do echo waiting for db; sleep 2; done"]
+          resources:
+            requests: {cpu: 10m, memory: 16Mi}
+            limits: {cpu: 100m, memory: 64Mi}
+      containers:
+        - name: gateway
+          image: {{ .Values.gateway.image }}
+          imagePullPolicy: {{ .Values.gateway.pullPolicy }}
+          env:
+            - name: DB_URL
+              value: jdbc:postgresql://{{ $pg }}:5432/{{ .Values.postgres.database }}
+            - name: DB_USER
+              valueFrom: {secretKeyRef: {name: {{ $pg }}, key: POSTGRES_USER}}
+            - name: DB_PASSWORD
+              valueFrom: {secretKeyRef: {name: {{ $pg }}, key: POSTGRES_PASSWORD}}
+            - name: DB_POOL_SIZE
+              value: {{ .Values.gateway.dbPoolSize | quote }}
+            - name: INFERENCE_URL
+              value: http://{{ $full }}-inference:8000
+            - name: INFERENCE_READ_TIMEOUT
+              value: {{ .Values.gateway.inferenceReadTimeout | quote }}
+            - name: INFERENCE_MAX_ATTEMPTS
+              value: {{ .Values.gateway.inferenceMaxAttempts | quote }}
+            - name: VIRTUAL_THREADS
+              value: {{ .Values.gateway.virtualThreads | quote }}
+            - name: OPEN_IN_VIEW
+              value: {{ .Values.gateway.openInView | quote }}
+          ports:
+            - containerPort: 8080
+          startupProbe:
+            httpGet: {path: /actuator/health/liveness, port: 8080}
+            periodSeconds: 3
+            failureThreshold: 40
+          readinessProbe:
+            httpGet: {path: /actuator/health/readiness, port: 8080}
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: {path: /actuator/health/liveness, port: 8080}
+            periodSeconds: 10
+          lifecycle:
+            # 엔드포인트에서 빠지는 동안 새 요청이 들어오지 않게 잠깐 기다린 뒤 graceful shutdown
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 5"]
+          resources: {{- toYaml .Values.gateway.resources | nindent 12 }}
+{{- if .Values.gateway.hpa.enabled }}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ $name }}
+  labels: {{- include "inspectops.labels" . | nindent 4 }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ $name }}
+  minReplicas: {{ .Values.gateway.hpa.minReplicas }}
+  maxReplicas: {{ .Values.gateway.hpa.maxReplicas }}
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.gateway.hpa.cpuUtilization }}
+{{- end }}
+{{- if .Values.ingress.enabled }}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $name }}
+  labels: {{- include "inspectops.labels" . | nindent 4 }}
+spec:
+  ingressClassName: {{ .Values.ingress.className }}
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $name }}
+                port:
+                  number: {{ .Values.service.port }}
+{{- end }}

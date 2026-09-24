@@ -1,0 +1,7 @@
+# 진단용 오버라이드 — PostgreSQL 데이터 디렉터리를 RAM(tmpfs)에 둔다.
+# 주기적 COMMIT 멈춤이 디스크 I/O 경로(Docker Desktop/WSL2 가상 디스크) 때문인지 가르는 대조군.
+# 재시작하면 데이터가 사라진다 — 실측 전용, 운영 금지.
+services:
+  postgres:
+    tmpfs:
+      - /var/lib/postgresql/data:size=1g

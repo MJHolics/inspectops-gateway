@@ -1,0 +1,53 @@
+gateway:
+  image: inspectops-gateway:0.1.0
+  pullPolicy: IfNotPresent
+  replicas: 1
+  virtualThreads: true
+  openInView: false
+  reviewThreshold: "0.80"
+  inferenceReadTimeout: 30s
+  inferenceMaxAttempts: 2
+  dbPoolSize: 10
+  resources:
+    requests: {cpu: 250m, memory: 384Mi}
+    limits: {cpu: "1", memory: 768Mi}
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 3
+    cpuUtilization: 70
+
+inference:
+  image: inspectops-inference:0.1.0
+  pullPolicy: IfNotPresent
+  replicas: 1
+  workers: 1
+  extraLatencyMs: 0
+  resources:
+    requests: {cpu: 250m, memory: 256Mi}
+    limits: {cpu: 500m, memory: 512Mi}
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 6
+    cpuUtilization: 60
+
+postgres:
+  image: postgres:16-alpine
+  storage: 1Gi
+  database: inspectops
+  user: inspectops
+  # 데모용 기본값. 실제 배포는 --set postgres.password=... 또는 외부 Secret으로 교체
+  password: inspectops
+  resources:
+    requests: {cpu: 100m, memory: 128Mi}
+    limits: {cpu: 500m, memory: 512Mi}
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: false
+  className: nginx
+  host: inspectops.local

@@ -1,0 +1,57 @@
+{
+  "runs": [
+    {
+      "label": "disk",
+      "pgdata_fs": "ext4",
+      "data_directory": "/var/lib/postgresql/data",
+      "vus": 200,
+      "requests": 34611,
+      "rps": 350.7,
+      "p50_ms": 517.8,
+      "p90_ms": 536.3,
+      "p99_ms": 3238.2,
+      "max_ms": 3287.5,
+      "http_failed_rate": 0,
+      "checks_pass_rate": 1,
+      "db_slow_gt_2s": 599,
+      "commit_gt_1s_logs": 0,
+      "commit_samples": []
+    },
+    {
+      "label": "tmpfs",
+      "pgdata_fs": "tmpfs",
+      "data_directory": "/var/lib/postgresql/data",
+      "vus": 200,
+      "requests": 34431,
+      "rps": 349.1,
+      "p50_ms": 520.8,
+      "p90_ms": 538.8,
+      "p99_ms": 3145.6,
+      "max_ms": 3273.8,
+      "http_failed_rate": 0,
+      "checks_pass_rate": 1,
+      "db_slow_gt_2s": 571,
+      "commit_gt_1s_logs": 0,
+      "commit_samples": []
+    },
+    {
+      "label": "disk",
+      "pgdata_fs": "ext4",
+      "data_directory": "/var/lib/postgresql/data",
+      "vus": 200,
+      "requests": 34345,
+      "rps": 348.1,
+      "p50_ms": 525.3,
+      "p90_ms": 544.8,
+      "p99_ms": 3123.5,
+      "max_ms": 3280.6,
+      "http_failed_rate": 0,
+      "checks_pass_rate": 1,
+      "db_slow_gt_2s": 597,
+      "commit_gt_1s_logs": 1,
+      "commit_samples": [
+        "postgres-1  | 2026-09-24 03:39:17.552 UTC [47] LOG:  duration: 2589.163 ms  execute S_1: COMMIT"
+      ]
+    }
+  ]
+}
